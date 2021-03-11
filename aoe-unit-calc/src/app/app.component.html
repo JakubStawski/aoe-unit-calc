@@ -1,0 +1,64 @@
+<h1>Age of empires 2 units calc</h1>
+
+<div class="container">
+
+  <form class="contactForm" [formGroup]="avaibleResources" (ngSubmit)="calcUnits()">
+    
+    <mat-form-field appearance="fill"  class="half">
+      <mat-label>Drewno</mat-label>
+      <input 
+          name="wood"
+          formControlName="wood"
+          [formControl]="woodFC" 
+          type="number" 
+          placeholder="Drewno" 
+          matInput
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill"  class="half">
+      <mat-label>Żywność</mat-label>
+      <input 
+          name="food"
+          formControlName="food"
+          [formControl]="foodFC" 
+          type="number" 
+          placeholder="Żywność" 
+          matInput
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill"  class="half">
+      <mat-label>Kamień</mat-label>
+      <input 
+          name="stone"
+          formControlName="stone"
+          [formControl]="stoneFC" 
+          type="number" 
+          placeholder="Kamień" 
+          matInput
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill"  class="half">
+      <mat-label>Złoto</mat-label>
+      <input 
+          name="gold"
+          formControlName="gold"
+          [formControl]="goldFC" 
+          type="number" 
+          placeholder="Złoto" 
+          matInput
+      />
+    </mat-form-field>
+    
+    <button type="submit" class="btn">Oblicz</button>
+  </form>
+
+  <div *ngIf="unitsResult.length > 0" class="unit-list">
+    <ul class="item">
+      <li 
+        *ngFor="let unit of unitsResult" 
+        [ngClass]="{exist: (unit.canRecruit != 0 && unit.canRecruit != 'Infinity')}">
+        {{unit.name}} <span>{{unit.canRecruit}} jedn.</span>
+      </li>
+    </ul>
+  </div>
+</div>

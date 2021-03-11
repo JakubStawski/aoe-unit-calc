@@ -1,0 +1,134 @@
+html, body {
+    margin:0;
+    padding:0;
+}
+
+h1 {
+    background:#333;
+    margin:0;
+    padding:20px 0;
+    color:white;
+    text-align:center;
+    margin-bottom:60px;
+}
+
+div.unit-list {
+    max-height:500px;
+    max-width:600px;
+    margin:0 auto;
+    overflow-y: scroll;
+    text-align:center;
+    ul {
+        padding:0;
+        li {
+            list-style:none;
+            font-size:18px;
+            display:flex;
+            padding:10px 30px;
+            background:#fff;
+            border-bottom:1px solid #ddd;
+            justify-content: space-between;
+
+            &:not(.exist) {
+                display:none;
+            }
+
+            span {
+                color:#444;
+            }
+        }
+    }
+}
+
+form {
+    text-align:center;
+    display:block;
+
+    ::ng-deep .mat-form-field {
+        cursor: text;
+        .mat-form-field-underline {
+            background-color:#333;
+            height:2px;
+            transform:none;
+        }
+
+        span.material-icons {
+            margin-right:10px;
+        }
+
+        .mat-form-field-wrapper {
+            &:hover {
+                .mat-form-field-ripple {
+                    background: #333;
+                }
+                .mat-form-field-prefix {
+                    color: #333;
+                }
+            }
+        }
+        .mat-form-field-flex {
+            border-radius:0;
+            background: #f8f8f8;
+            align-items: flex-start;
+
+            .mat-form-field-prefix {
+                transition:0.2s;
+                padding-top: 5px;
+            }
+        }
+        .mat-form-field-label, .mat-hint {
+            color: #000;
+        }
+    }
+
+    ::ng-deep .mat-form-field.mat-focused {
+        .mat-form-field-label {
+            color: #000;
+        }
+        input, textarea {
+            color: #000;
+
+            &::placeholder {
+                color:#aaa;
+            }
+        }
+        .mat-form-field-ripple {
+            background-color: #333;
+        }
+        .mat-form-field-required-marker {
+            color: #333;
+        }
+        .mat-input-element {
+            caret-color:#333;
+            
+        }
+    }
+
+
+    .half {
+        width:~"calc(50% - 15px)";
+        margin-right:30px; 
+
+        &:nth-child(2n) {
+            margin-right:0;
+        }
+    }
+
+    button {
+        display:block;
+        margin:0 auto;
+        bordeR:0;
+        outline: 0;
+        color:#333;
+        padding:16px 23px;
+        width:600px;
+        border:1px solid #ccc;
+        cursor:pointer;
+        transition:0.2s;
+        margin:20px auto;
+
+        &:hover {
+            background:#ddd;
+        }
+    }
+}
